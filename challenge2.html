@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>I Love NY T-Shirt</title>
+      <style>
+
+         /* Container: the positioned ancestor for the text spans */
+         div {
+            position: relative;
+            display: inline-block;
+            margin: 30px;
+            padding: 24px 34px 24px 24px;
+            background-color: #fff4d6;
+         }
+
+         img {
+            /* Your code goes here */
+            position: relative;
+            left: 10px;
+            display: block;
+            width: 300px;
+
+            /* Black border */
+            border: 4px solid black;
+
+            /* Space between the border and the image */
+            padding: 10px;
+
+            /* Space around the image */
+            margin: 0;
+
+            box-shadow: 8px 10px 22px rgba(0, 0, 0, 0.4);
+         }
+
+         .words {
+            font-family: impact, "Arial Black", sans-serif;
+            font-size: 60px;
+         }
+
+         .first {
+            /* Your code goes here */
+            position: absolute;
+            top: 128px;
+            left: 150px;
+            z-index: 2;
+         }
+
+         .heart {
+            color: red;
+            font-size: 80px;
+            /* Your code goes here */
+            position: absolute;
+            top: 108px;
+            left: 174px;
+            z-index: 2;
+         }
+
+         .last {
+            /* Your code goes here */
+            position: absolute;
+            top: 192px;
+            left: 150px;
+            z-index: 2;
+         }
+
+      </style>
+   </head>
+   <body>
+      <div>
+         <img src="tshirt.png" alt="White t-shirt">
+         <span class="first words">I</span>
+         <span class="heart">&hearts;</span>
+         <span class="last words">NY</span>
+      </div>
+   </body>
+</html>

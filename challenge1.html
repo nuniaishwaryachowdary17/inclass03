@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Question and Answer</title>
+      <style>
+
+         body {
+            font-family: Calibri, sans-serif;
+            font-size: 3em;
+         }
+
+         #answer {
+            color: black;
+            width: 100px;
+
+            /* Part of your solution goes here */
+            animation-name: moveFraction;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: both;
+            text-shadow: 0 0 12px currentColor;
+         }
+
+         /* moveFraction goes here */
+         @keyframes moveFraction {
+            0% {
+               color: yellow;
+               opacity: 0;
+               transform: translate(-355px, 60px);
+            }
+            50% {
+               opacity: 1;
+               transform: translate(0px, 60px);
+            }
+            100% {
+               color: red;
+               opacity: 1;
+               transform: translate(0px, 0px);
+            }
+         }
+
+
+         #question {
+            /* Part of your solution goes here */
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+         }
+
+         #question:hover {
+            /* Part of your solution goes here */
+            color: #1e6fff;
+            transform: translateY(-6px) scale(1.06);
+            text-shadow: 0 6px 14px rgba(30, 111, 255, 0.35);
+         }
+
+         span {
+            display: inline-block;
+         }
+
+         /* Restart button */
+         #restart {
+            display: block;
+            margin-top: 90px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 999px;
+            background: #1e6fff;
+            color: white;
+            font: bold 16px Calibri, sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(30, 111, 255, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+         }
+
+         #restart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(30, 111, 255, 0.45);
+         }
+
+         #restart:active {
+            transform: translateY(0);
+         }
+
+      </style>
+   </head>
+   <body>
+      <span id="question">Question: &frac14; + &frac12; =</span>
+      <span id="answer">&frac34;</span>
+      <button id="restart" type="button">&#8635; Restart Animation</button>
+
+      <script>
+         // Restart the CSS animation: clear it, force a reflow, then put it back.
+         document.getElementById("restart").addEventListener("click", function () {
+            var answer = document.getElementById("answer");
+            answer.style.animation = "none";
+            void answer.offsetWidth;
+            answer.style.animation = "";
+         });
+      </script>
+   </body>
+</html>
